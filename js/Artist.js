@@ -9,13 +9,12 @@ class Artist {
   AddArtistDOM() {
     const contentDoom = document.querySelector('.artist');
     const content = `
-      <div class="artist_content">
+      <div id="${this.id}" class="artist_content">
         <img class="artist_content--album" src="${this.image}" alt="">
-        <h2 class="artist_content--name">${this.name}</h2>
+        <h2 id="${this.id}" class="artist_content--name">${this.name}</h2>
       </div>
-      `;
-
-    contentDoom.innerHTML += content;
+    `;
+   contentDoom.innerHTML += content;
   }
 }
 
