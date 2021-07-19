@@ -1,0 +1,31 @@
+.position {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.background {
+  background: rgba(20, 20, 20, 0.3);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.container__modal {
+  position: absolute;
+  top: 40%;
+  left: 30vw;
+
+  h2 {
+    color: $third-color;
+    font-size: $size-l;
+    margin: 0 0 2rem 0;
+  }
+}
+
+.js__none {
+  display: none;
+}
