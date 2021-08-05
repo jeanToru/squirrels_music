@@ -2,6 +2,9 @@ import Artist from './Artist.js';
 import Song from './songs.js';
 
 const url = 'https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/artists';
+let formTotal =  document.querySelector('.container__form');
+let form =  document.querySelector('.box__content');
+
 
 fetch(url)
 .then((response) => response.json())
@@ -10,12 +13,14 @@ fetch(url)
       const artists = new Artist(artistSong.id, artistSong.name, artistSong.image, artistSong.description);
       artists.AddArtistDOM();
     });
-    callSongs();
+     callSongs();
   });
   
 function passId(id) {
   const URLSONG = `https://kt2ul4cwza.execute-api.us-east-2.amazonaws.com/public/songs/`;
-  
+
+  const contentUser = document.querySelector('.songs');
+  contentUser.classList.remove('js__none');
   fetch(`${URLSONG}${id}`, {
     method: "GET"
   })
@@ -44,7 +49,12 @@ function callSongs(){
     const target = event.target;
     if(target.className === 'artist_content--name') {
       const idSong = target.getAttribute('id')
+      const artist = document.querySelector('.artist');
+      formTotal.classList.add('js__none');
+      form.classList.add('js__none');
+      artist.classList.add('js__none');
       passId(idSong)
+
     }
   })
 }

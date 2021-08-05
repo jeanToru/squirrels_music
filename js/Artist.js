@@ -16,6 +16,15 @@ class Artist {
     `;
    contentDoom.innerHTML += content;
   }
+  AddDescriptiontDOM() {
+    const contentArtist = document.querySelector('.box__content');
+    const content = `
+    <h1>${this.name}</h1>
+    <img src="${this.image}" alt="">
+    <p>${this.description}</p>
+    `
+    contentArtist.innerHTML += content;
+  }
 }
 
 export default Artist;
